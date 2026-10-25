@@ -1,0 +1,33 @@
+{
+  "name": "@eguru/chatguru",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/index.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm --clean",
+    "types:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@eguru/types": "*",
+    "undici": "^7.24.5"
+  },
+  "devDependencies": {
+    "@eguru/tsconfig": "*"
+  }
+}

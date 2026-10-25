@@ -1,0 +1,36 @@
+{
+  "name": "@eguru/user",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/index.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm --clean",
+    "upload-users-to-s3": "tsx scripts/uploadUsersToS3.ts",
+    "types:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@eguru/crypto": "*",
+    "@eguru/env": "*",
+    "@eguru/s3": "*",
+    "@eguru/types": "*"
+  },
+  "devDependencies": {
+    "@eguru/tsconfig": "*"
+  }
+}

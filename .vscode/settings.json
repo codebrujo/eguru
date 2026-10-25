@@ -1,0 +1,56 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "npm install": true,
+    "env": true,
+    "npm --workspace @eguru/bot": true,
+    "npm --workspace @eguru/env": true,
+    "/^node -p \"require\\.resolve\\('@types/node/package\\.json'\\)\" && node -p \"require\\('@types/node/package\\.json'\\)\\.version\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "npx tsc": true,
+    "/^node -p \"require\\('typescript'\\)\\.version\" && node -p \"require\\('@types/node/package\\.json'\\)\\.version\" && node -p \"require\\('\\./packages/env/node_modules/@types/node/package\\.json'\\)\\.version\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "npm --workspace @eguru/xmpp": true,
+    "npm --workspace @eguru/logger": true,
+    "exit": true,
+    "/^node -e \"const fs=require\\('fs'\\); const dotenv=require\\('dotenv'\\); const p=fs\\.existsSync\\('\\.env'\\)\\?'\\.env':'apps/bot/\\.env'; if\\(!fs\\.existsSync\\(p\\)\\)\\{console\\.log\\('No \\.env found'\\); process\\.exit\\(0\\)\\} const e=dotenv\\.parse\\(fs\\.readFileSync\\(p\\)\\); for\\(const k of \\['AWS_ACCESS_KEY_ID','AWS_SECRET_ACCESS_KEY','AWS_REGION','SSM_APP_PARAMS_PREFIX','NODE_ENV'\\]\\) \\{ const v=e\\[k\\]; if\\(v===undefined\\) console\\.log\\(k\\+': missing'\\); else console\\.log\\(k\\+': length='\\+v\\.length\\+', leadingWhitespace='\\+/\\^\\\\s/\\.test\\(v\\)\\+', trailingWhitespace='\\+/\\\\s\\$/\\.test\\(v\\)\\+', valueShape='\\+\\(k==='AWS_REGION'\\|\\|k==='NODE_ENV'\\|\\|k==='SSM_APP_PARAMS_PREFIX'\\?JSON\\.stringify\\(v\\):'hidden'\\)\\); \\}\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^node -e \"const fs=require\\('fs'\\),dotenv=require\\('dotenv'\\); const p=fs\\.existsSync\\('\\.env'\\)\\?'\\.env':'apps/bot/\\.env'; if\\(!fs\\.existsSync\\(p\\)\\)\\{console\\.log\\('No \\.env found'\\); process\\.exit\\(0\\)\\}; const e=dotenv\\.parse\\(fs\\.readFileSync\\(p\\)\\); \\['AWS_ACCESS_KEY_ID','AWS_SECRET_ACCESS_KEY','AWS_REGION','SSM_APP_PARAMS_PREFIX','NODE_ENV'\\]\\.forEach\\(k=>\\{const v=e\\[k\\]; if\\(v===undefined\\) console\\.log\\(k\\+': missing'\\); else console\\.log\\(k\\+': length='\\+v\\.length\\+', leadingWhitespace='\\+\\(/\\^\\\\\\\\s/\\.test\\(v\\)\\)\\+', trailingWhitespace='\\+\\( /\\\\\\\\s\\$/\\.test\\(v\\)\\) \\+ ', valueShape='\\+\\(k==='AWS_REGION'\\|\\|k==='NODE_ENV'\\|\\|k==='SSM_APP_PARAMS_PREFIX'\\?JSON\\.stringify\\(v\\):'hidden'\\)\\)\\}\\)\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "code": true,
+    "true": true,
+    "npx prettier": true,
+    "npm run --workspace @eguru/env": true,
+    "npm --workspace @eguru/user": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
