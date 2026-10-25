@@ -147,3 +147,5 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+packages/env/scripts/data/*.json
+packages/user/scripts/data/*.json

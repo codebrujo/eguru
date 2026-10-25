@@ -1,0 +1,37 @@
+{
+  "name": "@eguru/env",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/index.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm --clean",
+    "load-envs-to-s3": "tsx scripts/loadEnvsToS3.ts",
+    "types:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@eguru/crypto": "*",
+    "@eguru/s3": "*",
+    "@eguru/ssm": "*",
+    "@eguru/types": "*",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@eguru/tsconfig": "*"
+  }
+}
